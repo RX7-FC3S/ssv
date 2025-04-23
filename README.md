@@ -85,4 +85,10 @@ PLUGIN="./v2ray-plugin"
 PLUGIN_OPTS="server;tls;host=$HOST;cert=$CER_PATH;key=$KEY_PATH"
 ...
 ```
+## Run the startup.sh 
+```bash
+chmod +x startup.sh
+./startup.sh
+```
+
 
