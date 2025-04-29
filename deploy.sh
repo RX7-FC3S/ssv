@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ss_config_path="/etc/shadowsocks-libev"
 
 echo 1. Install shadowsocks-libev, jq
