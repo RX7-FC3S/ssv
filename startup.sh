@@ -3,10 +3,9 @@
 SS_CONFIG="/etc/shadowsocks-libev/config.json"
 
 HOST="yourdomain.com"
-PORT=433
 
-CER_PATH="../.acme.sh/yourdomain.com_ecc/yourdomain.com.cer"
-KEY_PATH="../.acme.sh/yourdomain.com_ecc/yourdomain.com.key"
+CER_PATH="$HOME/.acme.sh/yourdomain.com_ecc/yourdomain.com.cer"
+KEY_PATH="$HOME/.acme.sh/yourdomain.com_ecc/yourdomain.com.key"
 
 LOG_FILE="./ssv.log"
 
@@ -45,4 +44,4 @@ sleep 3
 
 echo "================================================="
 echo "📋 端口占用状态"
-netstat -lptun | grep -E "v2ray-plugin|ss-server"
+ss -alp | grep -E "v2ray-plugin|ss-server"
