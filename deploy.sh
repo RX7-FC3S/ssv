@@ -34,6 +34,9 @@ curl https://get.acme.sh | sh
 acme_path="$HOME/.acme.sh"
 export PATH="$PATH:$acme_path"
 
+print green "5. Set CA to Let's Encrypt"
+acme.sh --set-default-ca --server letsencrypt
+
 print green '5. Check acme.sh required configs'
 print blue 'Select your DNS provider:'
 PS3='Please enter your choice(1/2): '
@@ -61,8 +64,8 @@ select dns_provider in 'Cloudflare' 'Aliyun'; do
     esac
 done
 
-print green '6. Register account'
-acme.sh --register-account -m "$CF_Email"
+# print green '6. Register account'
+# acme.sh --register-account -m "$CF_Email"
 
 print green '7. Issue certificate'
 echo -en "\033[0;34mDomain: \033[0m"
