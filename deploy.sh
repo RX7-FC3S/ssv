@@ -22,7 +22,7 @@ print green '1. Install shadowsocks-libev and jq'
 apt-get install shadowsocks-libev jq
 
 print green '2. Edit the server config'
-jq '.server = "0.0.0.0"' $ss_config_path >./temp_config.json
+jq '.server = "0.0.0.0" | .server_port = 443' $ss_config_path >./temp_config.json
 mv ./temp_config.json $ss_config_path
 cat /etc/shadowsocks-libev/config.json
 
